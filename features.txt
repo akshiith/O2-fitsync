@@ -1,0 +1,117 @@
+import streamlit as st
+
+# Set page title and layout
+st.set_page_config(page_title="FitSync AI - Smart Nutrition", layout="wide")
+
+# Custom Styling
+st.markdown(
+    """
+    <style>
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 15px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        .nutrition-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .nutrition-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .nutrition-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .nutrition-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .nutrition-button:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Hero Section
+st.markdown(
+    """
+    <div class="hero">
+        <h1>Smart Nutrition</h1>
+        <p>Get personalized nutrition plans and dietary recommendations tailored to your goals.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown("---")
+
+# Nutrition Plans Section
+st.markdown("<h2 class='section-title'>Nutrition Plans</h2>", unsafe_allow_html=True)
+st.write("Choose a plan that suits your dietary needs and fitness goals.")
+
+plans = {
+    "Balanced Diet Plan": "A well-rounded diet with a mix of proteins, carbs, and healthy fats. Includes portion control and meal timing.",
+    "Vegetarian Plan": "Plant-based meals rich in nutrients and fiber. Provides protein sources such as lentils, tofu, and quinoa.",
+    "High-Protein Plan": "Ideal for muscle building and recovery. Focuses on lean meats, fish, dairy, and plant-based proteins.",
+    "Low-Carb Plan": "Reduce carbs and focus on healthy fats and proteins. Perfect for those following keto or paleo diets.",
+    "Heart-Healthy Plan": "Focus on foods that promote cardiovascular health. Includes omega-3-rich fish, nuts, and whole grains.",
+    "Weight Loss Plan": "Calorie-controlled meals to help you shed pounds. Emphasizes nutrient-dense foods with a focus on portion control."
+}
+
+for plan, description in plans.items():
+    with st.expander(f"### {plan}"):
+        st.write(description)
+
+st.markdown("---")
+
+# Footer
+st.markdown(
+    """
+    <div class="footer">
+        <p>&copy; 2024 FitSync AI. All rights reserved.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)

@@ -1,0 +1,36 @@
+import streamlit as st
+
+st.set_page_config(page_title="30-Day Running Challenge", layout="wide")
+
+st.title("🏃 30-Day Running Challenge")
+st.write("Select your difficulty level and follow the structured plan.")
+
+levels = ["Beginner", "Intermediate", "Advanced"]
+level = st.radio("Select Running Level", levels)
+
+if level == "Beginner":
+    st.subheader("Beginner Plan")
+    st.table([
+        ["Day 1", "Walk 2 min / Run 1 min (Repeat 8x)"],
+        ["Day 2", "Rest"],
+        ["Day 3", "Walk 2 min / Run 1 min (Repeat 10x)"],
+        ["Day 30", "Run 30 minutes"],
+    ])
+elif level == "Intermediate":
+    st.subheader("Intermediate Plan")
+    st.table([
+        ["Day 1", "Run 2 miles"],
+        ["Day 2", "Rest or Cross-Training"],
+        ["Day 3", "Run 2.5 miles"],
+        ["Day 30", "Run 6 miles"],
+    ])
+else:
+    st.subheader("Advanced Plan")
+    st.table([
+        ["Day 1", "Run 4 miles"],
+        ["Day 2", "Rest or Cross-Training"],
+        ["Day 3", "Run 5 miles"],
+        ["Day 30", "Run 10 miles"],
+    ])
+
+st.success("Stay hydrated and listen to your body! 🏃‍♂")

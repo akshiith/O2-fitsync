@@ -1,0 +1,123 @@
+import streamlit as st
+
+# Set page title and layout
+st.set_page_config(page_title="FitSync AI - Challenges & Rewards", layout="wide")
+
+# Custom Styling
+st.markdown(
+    """
+    <style>
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 15px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        .challenge-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .challenge-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .challenge-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .challenge-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .challenge-button:hover {
+            background: #218838;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Hero Section
+st.markdown(
+    """
+    <div class="hero">
+        <h1>Challenges & Rewards</h1>
+        <p>Join exciting challenges and earn rewards for achieving your fitness goals!</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown("---")
+
+# Challenges Section
+st.markdown("<h2 class='section-title'>Featured Challenges</h2>", unsafe_allow_html=True)
+st.write("Participate in these challenges to stay motivated and earn rewards.")
+
+challenges = [
+    ("🏃 30-Day Running Challenge", "Run 5km every day for 30 days and earn a special badge."),
+    ("💪 Strength Training Challenge", "Complete 100 push-ups, 100 squats, and 100 sit-ups daily for 21 days."),
+    ("💧 Hydration Challenge", "Drink 2 liters of water daily for 30 days and earn a hydration badge."),
+    ("😴 Sleep Well Challenge", "Get 8 hours of sleep every night for 14 days and earn a sleep badge."),
+    ("🥗 Healthy Eating Challenge", "Eat 5 servings of fruits and vegetables daily for 30 days."),
+    ("🏆 Monthly Fitness Challenge", "Complete all monthly challenges and earn the ultimate fitness badge."),
+]
+
+col1, col2 = st.columns(2)
+
+for i, (title, description) in enumerate(challenges):
+    with col1 if i % 2 == 0 else col2:
+        st.markdown(f"### {title}")
+        st.write(description)
+        st.button(f"Join {title}")
+
+st.markdown("---")
+
+# Footer
+st.markdown(
+    """
+    <div class="footer">
+        <p>&copy; 2024 FitSync AI. All rights reserved.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+challand rew
